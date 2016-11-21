@@ -1,0 +1,24 @@
+header#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  h1#home-link {
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 10px;
+    line-height: 50px;
+  }
+  nav#links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    margin: 0 20px;
+    min-width: 400px;
+    background-color: pink;
+  }
+}
