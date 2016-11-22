@@ -4,10 +4,10 @@ import {Link, IndexLink} from 'react-router';
 const paths = ['projects', 'contact'];
 
 const Header = props => <header id='header'>
-  <h1 id='home-link'>
+  <h1>
     <IndexLink to='/'>J</IndexLink>
   </h1>
-  <nav id='links'>
+  <nav>
     {paths.map(path => <Link
       key={path}
       to={`/${path}`}

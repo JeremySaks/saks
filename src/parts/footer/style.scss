@@ -4,5 +4,23 @@ footer#footer {
   left: 0;
   right: 0;
   height: 50px;
-  background-color: pink;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  > nav {
+    a {
+      &:first-child {
+        margin-right: 28px;
+      }
+      svg {
+        height: 28px;
+        width: 28px;
+        fill: #333333;
+        transition: fill 0.2s ease;
+        &:hover {
+          fill: orange;
+        }
+      }      
+    }
+  }
 }
