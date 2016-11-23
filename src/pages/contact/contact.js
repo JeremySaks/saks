@@ -1,14 +1,14 @@
 import React from 'react';
 import Header from '../../parts/header/header.js';
-import Footer from '../../parts/footer/footer.js';
 import Title from 'react-document-title';
+
+const endpoint = '';
 
 const Contact = () => <Title title='Contact · Jeremy Saks'>
   <main id='contact'>
     <Header/>
     <Leader/>
     <Form/>
-    <Footer/>
   </main>
 </Title>;
 
@@ -22,12 +22,57 @@ const Leader = () => <section
 </section>;
 
 const Form = React.createClass({
+  getInitialState(){
+    return {
+      error: false,
+      sending: false,
+      sent: false,
+      valid: true
+    };
+  },
   submit(event){
     event.preventDefault();
+    const {form} = this.refs;
+    const valid = form.checkValidity();
+    this.setState({valid});
+    if (!valid) return;
+    const params = JSON.stringify({
+      name: this.refs.name.value.slice(0, 40),
+      email: this.refs.email.value.slice(0, 40),
+      message: this.refs.message.value.slice(0, 2000)
+    });
+    this.setState({sending: true});
+    form.reset();
+    const req = new XMLHttpRequest();
+    req.onreadystatechange = () => {
+      switch(req.readyState){
+        case 4:
+          if (req.status === 200){
+            this.setState({
+              sending: false,
+              sent: true
+            });
+          } else {
+            this.setState({
+              sending: false,
+              error: true
+            });
+          }
+          break;
+        default: break;
+      }
+    }
+    req.open('POST', endpoint, true);
+    req.send(params);
   },
   render(){
-    return <section id='form'>
-      <form name='contact' onSubmit={e => this.submit(e)}>
+    return <section
+      id='form'
+      className='composition'>
+      <form
+        ref='form'
+        name='contact'
+        onSubmit={e => this.submit(e)}>
         <div className='field'>
           <input
             ref='name'
@@ -53,6 +98,7 @@ const Form = React.createClass({
             maxLength='2000'
             placeholder='Message*'/>
         </div>
+        <p className='minor'>* Required</p>
         <div className='field submit'>
           <button
             type='submit'

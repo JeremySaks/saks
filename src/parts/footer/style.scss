@@ -6,7 +6,8 @@ footer#footer {
   height: 50px;
   display: flex;
   align-items: center;
-  justify-content: center;  
+  justify-content: center;
+  background-color: rgba(white, 0.9);
   > nav {
     a {
       &:first-child {

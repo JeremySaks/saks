@@ -1,1 +1,74 @@
-main#contact {}
+main#contact {
+  section#form {
+    form {
+      input, textarea {
+        border: none;
+        border-top: 1px solid #333333;
+        width: 100%;
+        padding-top: 12px;
+        padding-bottom: 36px;
+        background-color: transparent;
+        transition: 0.2s ease;
+        font-weight: 700;
+        font-size: 20px;
+        color: #333333;
+        &::-webkit-input-placeholder {
+          font-weight: 300;
+          color: #333333;
+          text-transform: uppercase;
+          font-size: 16px;
+        }
+        &::-moz-placeholder {
+          font-weight: 300;
+          color: #333333;
+          text-transform: uppercase;
+          font-size: 16px;
+        }
+        &:-ms-input-placeholder {
+          font-weight: 300;
+          color: #333333;
+          text-transform: uppercase;
+          font-size: 16px;
+        }
+        &:-moz-placeholder {
+          font-weight: 300;
+          color: #333333;
+          text-transform: uppercase;
+          font-size: 16px;
+        }
+        &:focus {
+          outline: none;
+          border-top: 1px solid orange;
+        }
+      }
+      textarea {
+        resize: vertical;
+        min-height: 150px;
+        max-height: 600px;
+      }
+      button {
+        border: none;
+        width: 120px;
+        height: 36px;
+        line-height: 34px;
+        border-radius: 8px;
+        font-weight: 500;
+        color: white;
+        background-color: #333333;
+        transition: 0.2s ease;
+        cursor: pointer;
+        &:disabled {
+          background-color: #CCCCCC;
+          cursor: not-allowed;
+        }
+        &:focus {
+          outline: 1px solid orange;
+        }
+      }
+      div.submit {
+        text-align: right;
+      }
+    }
+  }
+
+}
