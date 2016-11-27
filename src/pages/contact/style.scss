@@ -9,7 +9,7 @@ main#contact {
         padding-bottom: 36px;
         background-color: transparent;
         transition: border 0.2s ease;
-        font-weight: 700;
+        font-weight: 500;
         font-size: 20px;
         color: #333333;
         &::-webkit-input-placeholder {
@@ -65,17 +65,30 @@ main#contact {
           outline: 1px solid orange;
         }
       }
+      div.invalid {
+        background-color: #ff5050;
+        color: white;
+        margin: 8px 0;
+        padding: 12px 12px 8px 12px;
+        font-size: 14px;
+      }
       div.submit {
         text-align: right;
       }
     }
   }
   div.notice {
+    border-top: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    padding: 24px 0;
     margin-top: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
     i.icon {
+      &.sending {
+        width: 106px;
+      }
       &.sent {
         width: 96px;
       }
@@ -85,10 +98,20 @@ main#contact {
       svg {
         height: 108px;
         width: 108px;
+        &#icon-sending {
+          fill: orange;
+          animation: spin 3s linear infinite;
+        }
         &#icon-sent {
           fill: #7ED321;
         }
+        &#icon-error {
+          fill: #ff5050;
+        }
       }
-    }    
+    }
+    p {
+      margin: 0;
+    }
   }
 }

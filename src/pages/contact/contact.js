@@ -9,8 +9,6 @@ const Contact = () => <Title title='Contact · Jeremy Saks'>
     <Header/>
     <Leader/>
     <Form/>
-    <Sent/>
-    <Error/>
   </main>
 </Title>;
 
@@ -68,50 +66,75 @@ const Form = React.createClass({
     req.send(params);
   },
   render(){
-    return <section
-      id='form'
-      className='composition'>
-      <form
-        ref='form'
-        name='contact'
-        onSubmit={e => this.submit(e)}>
-        <div className='field'>
-          <input
-            ref='name'
-            type='text'
-            placeholder='Name*'
-            minLength='2'
-            maxLength='40'
-            required='true'/>
-        </div>
-        <div className='field'>
-          <input
-            ref='email'
-            type='email'
-            placeholder='Email*'
-            minLength='5'
-            maxLength='40'
-            required='true'/>
-        </div>
-        <div className='field'>
-          <textarea
-            ref='message'
-            minLength='5'
-            maxLength='2000'
-            placeholder='Message*'/>
-        </div>
-        <p className='minor'>* Required</p>
-        <div className='field submit'>
-          <button
-            type='submit'
-            onClick={e => this.submit(e)}>
-            Submit
-          </button>
-        </div>
-      </form>
-    </section>;
+    const {sending, sent, valid, error} = this.state;
+    switch(true){
+      case sending: return <Sending/>;
+      case sent: return <Sent/>;
+      case error: return <Error/>;
+      default: return <section
+        id='form'
+        className='composition'>
+        <form
+          ref='form'
+          name='contact'
+          onSubmit={e => this.submit(e)}>
+          <div className='field'>
+            <input
+              ref='name'
+              type='text'
+              spellCheck='false'
+              placeholder='Name*'
+              minLength='2'
+              maxLength='40'
+              required='true'/>
+          </div>
+          <div className='field'>
+            <input
+              ref='email'
+              type='email'
+              spellCheck='false'
+              placeholder='Email*'
+              minLength='5'
+              maxLength='40'
+              required='true'/>
+          </div>
+          <div className='field'>
+            <textarea
+              ref='message'
+              minLength='5'
+              maxLength='2000'
+              required='true'
+              placeholder='Message*'/>
+          </div>
+          {!valid && <div className='field invalid'>
+            There was a problem with one or more fields.
+          </div>}
+          <p className='minor'>* Required</p>
+          <div className='field submit'>
+            <button
+              type='submit'
+              onClick={e => this.submit(e)}>
+              Submit
+            </button>
+          </div>
+        </form>
+      </section>;
+    }
   }
 });
+
+const Sending = () => <div
+  id='sending'
+  className='notice'>
+  <i className='icon sending'>
+    <svg id='icon-sending' viewBox='0 0 40 40'>
+      <g>
+        <path d='m33.8 18.8c0.7 0 1.2 0.5 1.2 1.2s-0.5 1.3-1.2 1.3h-6.3c-0.7 0-1.2-0.6-1.2-1.3s0.5-1.2 1.2-1.2h6.3z m-20 1.2c0 0.7-0.6 1.3-1.3 1.3h-6.2c-0.8 0-1.3-0.6-1.3-1.3s0.5-1.2 1.3-1.2h6.2c0.7 0 1.3 0.5 1.3 1.2z m6.2 6.3c0.7 0 1.3 0.5 1.3 1.2v6.3c0 0.7-0.6 1.2-1.3 1.2s-1.2-0.5-1.2-1.2v-6.3c0-0.7 0.5-1.2 1.2-1.2z m0-21.3c0.7 0 1.3 0.5 1.3 1.3v6.2c0 0.7-0.6 1.3-1.3 1.3s-1.2-0.6-1.2-1.3v-6.2c0-0.8 0.5-1.3 1.2-1.3z m5.4 11.9c-0.3-0.6-0.2-1.4 0.5-1.7l5.4-3.2c0.6-0.3 1.4-0.1 1.7 0.5s0.1 1.4-0.5 1.7l-5.4 3.1c-0.6 0.4-1.4 0.2-1.7-0.4z m-10.8 6.2c0.3 0.7 0.2 1.4-0.5 1.7l-5.3 3.2c-0.7 0.3-1.5 0.1-1.8-0.5s-0.1-1.4 0.5-1.7l5.4-3.1c0.6-0.4 1.4-0.2 1.7 0.4z m10.2 2.8l3.2 5.3c0.3 0.7 0.1 1.5-0.5 1.8s-1.4 0.1-1.7-0.5l-3.1-5.4c-0.4-0.6-0.2-1.4 0.4-1.7s1.4-0.2 1.7 0.5z m-10.6-18.4l3.1 5.4c0.4 0.6 0.2 1.4-0.4 1.7s-1.4 0.2-1.7-0.5l-3.2-5.3c-0.3-0.7-0.1-1.5 0.5-1.8s1.4-0.1 1.7 0.5z m8.9 7.1c-0.6-0.3-0.8-1.1-0.4-1.7l3.1-5.4c0.3-0.6 1.1-0.8 1.7-0.5s0.8 1.1 0.5 1.8l-3.2 5.3c-0.3 0.7-1 0.8-1.7 0.5z m-6.2 10.8c0.6 0.3 0.8 1.1 0.4 1.7l-3.1 5.4c-0.3 0.6-1.1 0.8-1.7 0.5s-0.8-1.1-0.5-1.7l3.2-5.4c0.3-0.7 1-0.8 1.7-0.5z m15.6 0.4c0.6 0.3 0.8 1.1 0.5 1.7s-1.1 0.8-1.7 0.5l-5.4-3.2c-0.7-0.3-0.8-1.1-0.5-1.7s1.1-0.8 1.7-0.4z m-25-11.6c-0.6-0.3-0.8-1.1-0.5-1.7s1.1-0.8 1.8-0.5l5.3 3.2c0.7 0.3 0.8 1.1 0.5 1.7s-1.1 0.8-1.7 0.4z'/>
+      </g>
+    </svg>
+  </i>
+  <p>Sending...</p>
+</div>;
 
 const Sent = () => <div
   id='sent'
@@ -123,7 +146,7 @@ const Sent = () => <div
       </g>
     </svg>
   </i>
-  <p>Your message is sent. Thanks!</p>
+  <p>Your message is sent!</p>
 </div>;
 
 const Error = () => <div
@@ -136,7 +159,7 @@ const Error = () => <div
       </g>
     </svg>
   </i>
-  <p>Sorry, there was an error processing your message.</p>
+  <p>Sorry, there was an error sending your message.</p>
 </div>;
 
 export default Contact;
