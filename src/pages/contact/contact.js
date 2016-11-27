@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../../parts/header/header.js';
 import Title from 'react-document-title';
 
-const endpoint = '';
+const endpoint = 'https://yznhh31gfa.execute-api.us-east-1.amazonaws.com/production';
 
 const Contact = () => <Title title='Contact · Jeremy Saks'>
   <main id='contact'>

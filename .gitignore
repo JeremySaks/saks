@@ -1,8 +1,8 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
-node_modules
-coverage
 build
+coverage
+node_modules
+npm-debug.log
+private.yml
 .DS_Store
 .env
-npm-debug.log
 *.sketch
