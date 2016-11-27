@@ -9,7 +9,7 @@ const text = `
   I specialize in modern apps for founders, startups and growth companies seeking graceful, scalable and performant systems. 
   I work with builders, free thinkers and iconoclasts.
 `;
-const quote = `'Many a false step was made by standing still.'`;
+const quote = `"Many a false step was made by standing still."`;
 
 const Home = () => <Title title='Jeremy Saks'>
   <main id='home'>

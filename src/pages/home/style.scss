@@ -1,8 +1,7 @@
 main#home {
   section#splash {
-    transition: 1s ease;
-    transform: scale(1.2) translateY(56px);
-    will-change: transform;
+    transition: 0.8s ease;
+    transform: scale(1.2) translateY(64px);
     &.arrived {
       transform: scale(1) translateY(0);
     }

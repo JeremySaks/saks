@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../../parts/header/header.js';
 import Title from 'react-document-title';
 
-const endpoint = 'https://yznhh31gfa.execute-api.us-east-1.amazonaws.com/production';
+const endpoint = 'https://yznhh31gfa.execute-api.us-east-1.amazonaws.com/production/contact';
 
 const Contact = () => <Title title='Contact · Jeremy Saks'>
   <main id='contact'>
@@ -17,7 +17,7 @@ const Leader = () => <section
   className='composition'>
   <hgroup>
     <h1>contact</h1>
-    <h3>Drop me a line with questions, ideas & projects.</h3>
+    <h3>Drop me a line with questions, projects & ideas, or email me at jeremy.saks@gmail.com.</h3>
   </hgroup>
 </section>;
 
