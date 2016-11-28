@@ -17,7 +17,7 @@ const Leader = () => <section
   className='composition'>
   <hgroup>
     <h1>contact</h1>
-    <h3>Drop me a line with questions, projects & ideas, or email me at jeremy.saks@gmail.com.</h3>
+    <h3>Drop me a line with questions, projects & ideas. Or email me at jeremy.saks@gmail.com.</h3>
   </hgroup>
 </section>;
 

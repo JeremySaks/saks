@@ -32,27 +32,11 @@ header#header {
       text-transform: uppercase;
       font-weight: 500;
       font-size: 16px;
-      position: relative;
       &.current {
         pointer-events: none;
         color: orange;
       }
-      &:before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 1px;
-        bottom: 0;
-        left: 0;
-        background-color: #333333;
-        visibility: hidden;
-        transform: scaleX(0);
-        transition: all 0.1s ease;
-      }
-      &:not(.current):hover:before {
-        visibility: visible;
-        transform: scaleX(1);
-      }
+      @include lineHover(#333333);
     }
   }
 }

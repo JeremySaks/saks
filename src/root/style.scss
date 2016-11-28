@@ -22,6 +22,31 @@
   font-weight: 700;
 }
 
+@mixin lineHover($color) {
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -1px;
+    left: 0;
+    background-color: $color;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.1s ease;
+  }
+  &:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes spin {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+
 html {
   font-family: 'Cooper Hewitt', sans-serif;
 }
@@ -88,9 +113,4 @@ section.composition {
   main {
     width: 320px;
   }
-}
-
-@keyframes spin {
-  from {transform: rotate(0deg);}
-  to {transform: rotate(360deg);}
 }

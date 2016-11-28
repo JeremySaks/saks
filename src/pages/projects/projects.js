@@ -29,7 +29,7 @@ const Atopolis = () => <section
     {lorem}
   </p>
   <p className='major'>
-    ES2015 · Node · React · Redux · Immutable · MongoDB · Redis · SemanticUI · SASS
+    ES2015 · Node · React · Redux · Immutable · MongoDB · Redis · Semantic UI · SASS
   </p>
   <p className='minor'>
     Coming Soon
@@ -47,7 +47,7 @@ const Finishers = () => <section
     {lorem}
   </p>
   <p className='major'>
-    ES2015 · Node · Meteor · MongoDB · Blaze · HTML5 · CSS3 · SASS
+    ES2015 · Node · Meteor · MongoDB · Blaze · SASS
   </p>
   <p className='minor'>
     <a href='https://finishers.com/'>Visit Finishers.com</a>
@@ -104,7 +104,7 @@ const YingYingLi = () => <section
     {lorem}
   </p>
   <p className='major'>
-    React · React Router · Webpack · AWS S3 · AWS Lambda
+    React · React Router · Webpack · SASS · AWS Lambda
   </p>
   <p className='minor'>
     <a href='http://yingyingli.com/'>Visit YingYingLi.com</a>
@@ -122,8 +122,12 @@ const JeremySaks = () => <section
   <p className='major'>
     {lorem}
   </p>
+  <p className='major'>
+    React · React Router · Webpack · SASS · AWS Lambda
+  </p>
   <p className='minor'>
-    <a href=''>View Source ▸</a>
+    <a href='https://github.com/JeremySaks/saks'>View Source</a>
+    <span className='triangle'>▸</span>
   </p>  
 </section>;
 
