@@ -1,9 +1,13 @@
 import React from 'react';
-import {browserHistory, IndexRoute, Route, Router} from 'react-router'
+import {browserHistory, IndexRoute, Route, Router} from 'react-router';
 import Home from '../pages/home/home.js';
 import Contact from '../pages/contact/contact.js';
 import Projects from '../pages/projects/projects.js';
 import NotFound from '../pages/notfound/notfound.js';
+
+const track = location => console.log(location);
+
+browserHistory.listen(track);
 
 const Root = <Router
   history={browserHistory}>
