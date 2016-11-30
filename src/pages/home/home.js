@@ -9,10 +9,13 @@ const text = `
   I specialize in modern apps for founders, startups and growth companies seeking graceful, scalable and performant systems. 
   I work with builders, free thinkers and iconoclasts.
 `;
+
 const quote = `"Many a false step was made by standing still."`;
 
 const Home = () => <Title title='Jeremy Saks'>
-  <main id='home'>
+  <main id='home'
+    itemScope
+    itemType='http://schema.org/ProfilePage'>
     <Header/>
     <Splash/>
     <Footer/>
@@ -29,12 +32,13 @@ const live = lifecycle({
 const Splash = live(() => <section
   id='splash'
   className='composition'
-  ref='splash'>
+  ref='splash'
+  itemProp='mainContentOfPage'>
   <hgroup>
-    <h1>jeremy saks</h1>
-    <h3>Web & Mobile Developer, New York, New York</h3>
+    <h1 itemProp='name'>jeremy saks</h1>
+    <h3 itemProp='description'>Web & Mobile Developer, New York, New York</h3>
   </hgroup>
-  <p className='major'>{text}</p>
+  <p className='major' itemProp='about'>{text}</p>
   <p className='minor'>{quote}</p>
 </section>);
 

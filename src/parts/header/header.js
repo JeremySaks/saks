@@ -3,7 +3,9 @@ import {Link, IndexLink} from 'react-router';
 
 const paths = ['projects', 'contact'];
 
-const Header = props => <header id='header'>
+const Header = props => <header id='header'
+  itemScope
+  itemType='http://schema.org/WPHeader'>
   <h1>
     <IndexLink to='/'>J</IndexLink>
   </h1>

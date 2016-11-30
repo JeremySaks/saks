@@ -5,7 +5,9 @@ import Title from 'react-document-title';
 const endpoint = 'https://yznhh31gfa.execute-api.us-east-1.amazonaws.com/production/contact';
 
 const Contact = () => <Title title='Contact · Jeremy Saks'>
-  <main id='contact'>
+  <main id='contact'
+    itemScope
+    itemType='http://schema.org/ContactPage'>
     <Header/>
     <Leader/>
     <Form/>
@@ -17,7 +19,7 @@ const Leader = () => <section
   className='composition'>
   <hgroup>
     <h1>contact</h1>
-    <h3>Drop me a line with questions, projects & ideas. Or email me at jeremy.saks@gmail.com.</h3>
+    <h3>Drop me a line with questions, projects & ideas, or email me at jeremy.saks@gmail.com.</h3>
   </hgroup>
 </section>;
 
