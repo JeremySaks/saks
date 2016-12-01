@@ -19,7 +19,7 @@
     "eslint": "^3.11.1",
     "eslint-config-react-app": "^0.3.0",
     "eslint-loader": "1.6.1",
-    "eslint-plugin-flowtype": "^2.29.0",
+    "eslint-plugin-flowtype": "^2.29.1",
     "eslint-plugin-import": "2.2.0",
     "eslint-plugin-jsx-a11y": "3.0.1",
     "eslint-plugin-react": "6.7.1",
@@ -50,7 +50,7 @@
     "webpack-dev-server": "1.16.2",
     "webpack-manifest-plugin": "1.1.0",
     "whatwg-fetch": "2.0.1",
-    "yarn": "^0.17.9"
+    "yarn": "^0.17.10"
   },
   "dependencies": {
     "lodash": "^4.17.2",
