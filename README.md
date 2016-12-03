@@ -1,6 +1,6 @@
 ## Saks
 
-Source for my static personal site, [saks.io](https://site.com), built with React. React is a great alternative for complex SPAs; it's also great for organizing simple static projects!
+Source for my static personal site, [saks.io](https://saks.io), built with React. React is a great alternative for complex SPAs; it's also great for organizing simple static projects!
 
 #### Code
 
