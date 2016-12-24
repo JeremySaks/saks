@@ -12,7 +12,7 @@ const Projects = () => <Title title='Projects · Jeremy Saks'>
     <Finishers/>
     <GearPlan/>
     <Tapology/>
-    <YingYingLi/>
+    {/*<YingYingLi/>*/}
     <JeremySaks/>
     <Footer/>
   </main>
