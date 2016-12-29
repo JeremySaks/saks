@@ -31,7 +31,7 @@ const Atopolis = () => <section
     A live multiplayer collectible card game app set in a dystopian near future. Built for web & mobile, Atopolis is Hearthstone for grownups. Coming soon!
   </p>
   <p className='major' itemProp='about'>
-    Node · React · React Native · Redux · Immutable · Redis · MongoDB · ES2015 · Semantic UI · Radium · SASS
+    Node · React · React Native · Redux · Immutable · Redis · MongoDB · ES2015 · Radium · SASS
   </p>
   <p className='minor'>
     Coming Soon
