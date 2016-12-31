@@ -1,21 +1,21 @@
 import React from 'react';
 import {browserHistory, IndexRoute, Route, Router} from 'react-router';
+import ReactGA from 'react-ga';
 import Home from '../pages/home/home.js';
 import Contact from '../pages/contact/contact.js';
 import Projects from '../pages/projects/projects.js';
 import NotFound from '../pages/notfound/notfound.js';
 
-const analytics = ({pathname}) => {
-  const {ga} = window;
-  if (!ga) return;
-  ga('set', 'page', pathname);
-  ga('send', 'pageview');
+ReactGA.initialize('UA-88258965-1');
+
+const logPageView =() => {
+  ReactGA.set({page: window.location.pathname});
+  ReactGA.pageview(window.location.pathname);
 }
 
-browserHistory.listen(analytics);
-
 const Root = <Router
-  history={browserHistory}>
+  history={browserHistory}
+  onUpdate={logPageView}>
   <Route path='/'>
     <IndexRoute
       component={Home}/>

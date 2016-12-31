@@ -6,8 +6,8 @@ import Title from 'react-document-title';
 
 const text = `
   I'm a full stack web and mobile application developer in New York City. 
-  I specialize in modern apps for founders, startups and growth companies.
-  Free thinkers and iconoclasts seeking graceful, scalable and performant systems, drop me a line.
+  I build graceful, scalable and performant systems for founders, startups and growth companies.
+  I love working with free thinkers, innovators and iconoclasts. If you're interested, drop me a line!
 `;
 
 const quote = `"Many a false step was made by standing still."`;
